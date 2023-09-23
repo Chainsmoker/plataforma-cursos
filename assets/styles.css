@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0c0c0c;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.seccion__titulo {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.seccion__descripcion {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+nav {
+    background-color: #000;
+    display: flex;
+    padding: 16px 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #5c5c5c;
+}
+
+
+nav a {
+    color: #65747e;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav__links a:last-child {
+    padding: 15px 20px;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    color: #fff;
+    font-weight: 600;
+}
+
+.hero {
+    padding: .1px;
+}
+
+.hero__contenedor {
+    margin: 50px auto;
+    text-align: center;
+    color: #fff;
+}
+
+.hero__contenedor h1 {
+    width: 70%;
+    margin: auto;
+}
+
+.gradient {
+    background-image: linear-gradient(135deg, #12c2e9, #c471ed 50%, #f64f59);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero__contenedor a {
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    padding: 15px 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.hero__contenedor p {
+    font-size: 13px;
+    width: 40%;
+    margin: 20px auto 40px;
+}
+
+.hero__contenedor iframe {
+    width: 700px;
+}
+
+.contenedor {
+    padding: 0 50px;
+    color: #fff;
+    max-width: 1750px;
+    margin: auto;
+}
+
+.contenedor hr {
+    border: 1px solid #424242;
+}
+
+.cursos__titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 10px;
+}
+
+.cursos__titulo h1 {
+    font-weight: 600;
+}
+
+.cursos__titulo a {
+    color: #fff;
+}
+
+.cursos__descripcion {
+    width: 40%;
+    font-weight: 400;
+}
+
+.cursos__populares {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.curso__tarjeta {
+    border: 1px solid #424242;
+    width: 450px;
+    background-color: #000;
+}
+
+.tarjeta__contenido {
+    padding: 20px;
+}
+
+.tarjeta__contenido .tarjeta__titulo h2 {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.tarjeta__contenido .tarjeta__nivel_tiempo, .tarjeta__contenido .tarjeta__descripcion {
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.tarjeta__contenido a {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #424242;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 30px;
+}
+
+.resenas {
+    margin-top: 100px;
+}
+
+.resenas__intro {
+    margin-top: 50px;
+    display: flex;
+}
+
+.resenas__intro .resenas__textos {
+    width: 40%;
+}
+
+.resenas__intro .resenas__textos p {
+    margin-top: 20px;
+}
+
+.resenas__estudiantes {
+    margin-left: 100px;
+}
+
+.resenas__estudiantes .resenas__img_perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.resenas__estudiantes .resenas__img_perfil img:nth-child(2){
+    transform: translateX(-20px);
+}
+
+.resenas__estudiantes .resenas__img_perfil img:last-child{
+    transform: translateX(-40px);
+}
+
+.resenas__estudiantes h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.resenas__slider {
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.resenas__contenido {
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    width: 100%; 
+    overflow: auto;
+    display: flex;
+}
+
+.resenas__tarjetas {
+    display: inline-block;
+    overflow-x: auto;
+    white-space: normal;
+}
+
+.resenas__tarjeta {
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+    vertical-align: top;
+    background-color: #000;
+    border: 2px solid #5c5c5c;
+}
+
+.resena__tarjeta_text {
+    padding: 20px;
+}
+
+.resena__tarjeta_info {
+    display: flex;
+}
+
+.resena__tarjeta_info img {
+    width: 80px;
+}
+
+.resena__tarjeta_usuario {
+    margin: 20px 20px 0;
+
+}
+
+.resena__tarjeta_usuario p {
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.recursos__recomendados {
+    margin-top: 100px;
+}
+
+.recursos__recomendados h2 {
+    margin-top: 50px;
+}
+
+.recursos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.recursos__tarjeta {
+    width: 400px;
+    border: 1px solid #424242;
+    padding: 20px;
+}
+
+.recursos__tarjeta img {
+    width: 50px;
+}
+
+.recursos__tarjeta h2 {
+    margin: 10px 0 20px;
+    font-weight: 600;
+}
+
+.recursos__tarjeta p {
+    font-size: 12px;
+    height: 70px;
+}
+.recursos__tarjeta a {
+    color: #fff;
+}
+
+.suscribirse {
+    background-image: linear-gradient(135deg, #12c2e9, #c471ed 50%, #f64f59);
+    min-height: 300px;
+    margin-top: 70px;
+    display: flex;
+    color: #fff;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.suscribirse__textos {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.suscribirse__textos h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.suscribirse__form  {
+    margin-top: 50px;
+}
+
+.suscribirse__form form input {
+    height: 50px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    font-size: 1rem;
+    width: 300px;
+}
+
+.suscribirse__form form button {
+    background-color: #fff;
+    height: 50px;
+    border: none;
+    transform: translate(-5px, -1px);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.suscribirse__form form button:hover {
+    background-color: #f64f59;
+    transition: .5s background-color;
+}
+
+footer {
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    color: #65747e;
+    font-size: 13px;
+}
+
+.footer__columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.redes__sociales {
+    display: flex;
+    gap: 10px;
+}
+
+
+@media (max-width: 1000px) {
+    .cursos__populares {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .curso__tarjeta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .suscribirse {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recursos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .recursos__tarjeta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 780px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .hero iframe {
+        width: 450px;
+    }
+
+    .resenas__intro {
+        flex-direction: column;
+    }
+
+    .resenas__intro .resenas__textos {
+        width: 70%;
+    }
+
+    .resenas__estudiantes {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .suscribirse {
+        align-items: flex-start;
+    }
+
+    .suscribirse__textos {
+        width: 70%;
+    }
+
+    footer {
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 500px){
+    nav  {
+        display: none;
+    }
+
+    .hero__contenedor h1 {
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    .hero iframe {
+        width: 400px;
+    }
+
+    .resenas__intro .resenas__textos {
+        width: 100%;
+    }
+
+    .suscribirse__form form button {
+        transform: translate(0px, 10px);
+    }
+
+    footer  {
+        text-align: center;
+    }
+
+    footer a {
+        font-size: 1.2rem;
+    }
+    
+    footer .footer__columna {
+        width: 100%;
+    }
+}
