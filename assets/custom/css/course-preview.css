@@ -1,0 +1,255 @@
+.grid__contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 150px;
+}
+
+.indice {
+    display: flex;
+    gap: 10px;
+}
+
+.indice a {
+    color: #fff;
+}
+
+.curso__detalles  {
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.curso__detalles h1  {
+    margin-top: 20px;
+    font-size: 3rem;
+}
+
+.curso__detalles p {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.curso__descripcion {
+    font-size: 1rem !important;
+}
+
+.curso__botones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn_empezar {
+    height: 50px;
+    width: 200px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+}
+
+.curso__botones button {
+    height: 50px;
+    width: 200px;
+    background-color: inherit;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: 1px solid #65747e;
+}
+
+.curso__botones button:hover {
+    background-color: #65747e;
+    transition: .3s;
+}
+
+.hero__columna2 {
+    text-align: end;
+}
+
+.hero__columna2 img {
+    width: 90%;
+    height: 100%;
+}
+
+.sobre__curso {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.sobre__curso h1 {
+    font-weight: 600;
+}
+
+.sobre__tarjetas {
+    display: flex;
+    margin: 40px 0;
+    justify-content: space-between;
+    gap: 2px;
+} 
+
+.sobre__tarjeta {
+    width: 100%;
+    height: 200px;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.sobre__tarjeta img {
+    width: 30px;
+}
+
+.sobre__tarjeta h2 {
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.sobre__tarjeta p {
+    font-size: 13px;
+}
+
+.sobre__textos {
+    margin-top: 20px;
+}
+
+.sobre__textos a {
+    display: inline-block;
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+}
+
+.resumen__columna1 h1, .resumen__columna2 h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.resumen__columna2 h1 {
+    margin-left: 55px;
+}
+
+.temario__contenedor {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #65747e;
+    width: 90%;
+    float: right;
+}
+
+.termario__seccion {
+    display: inline-block;
+    height: 50px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #65747e;
+    color: #fff;
+}
+
+.termario__seccion:hover {
+    background-color: #50555e6c;
+    transition: .5s background;
+}
+
+.termario__seccion img {
+    width: 20px;
+}
+
+.para__ti {
+    margin-top: 80px;
+}
+
+.para__ti h1 {
+    font-weight:600;
+}
+
+.grid__para_ti {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 50px;
+    row-gap: 70px;
+    column-gap: 90px;
+    padding-bottom: 50px;
+}
+
+.tarjeta__para_ti {
+    display: flex;
+    gap: 20px;
+}
+
+.tarjeta__para_ti img {
+    width: 50px;
+    height: 50px;
+    background-color: #171717;
+    padding: 5px;
+
+}
+
+.tarjeta__para_ti h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.tarjeta__para_ti p {
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+@media (max-width: 920px) {
+    .grid__contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .grid__para_ti {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__columna2 {
+        margin-top: 50px;
+    }
+
+    .hero__columna2 img, .curso__detalles {
+        width: 100% !important;
+    }
+
+    .resumen__columna1 {
+        margin-bottom: 50px;
+    }
+
+    .resumen__columna2 .temario__contenedor {
+        width: 100%;
+    }
+
+    .resumen__columna2 h1 {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .indice {
+        font-size: 13px;
+    }
+    .curso__botones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .curso__botones a, .curso__botones button {
+        width: 100%;
+    }
+
+    .sobre__tarjetas {
+        flex-wrap: wrap;
+    }
+
+    .grid__para_ti {
+        grid-template-columns: 1fr;
+    }
+}

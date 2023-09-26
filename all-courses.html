@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/custom/css/all-courses.css">
 </head>
 <body>
     <nav>
@@ -26,20 +27,14 @@
     </nav>
     <section class="hero">
         <div class="hero__contenedor">
-            <h1><span class="gradient">Aprenda las habilidades</span> que necesita para crear sitios web y aplicaciones impresionantes</h1>
-            <a href="">Aprender ahora</a>
-            <p>Nuestros cursos son completamente gratuitos y podrás acceder a ellos registrandote</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/N5dkg28jRF0?si=gqdtsYpHr0GGooa_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+            <h1 style="font-size: 3rem;"><span class="gradient">Cursos</span> destacados</h1>
+            <p>Nuestros cursos cubren una variedad de temas desde nivel principiante hasta nivel avanzado. Aquí están nuestros cursos más populares:</p>
+        </div>  
     </section>
     <div class="contenedor">
         <hr>
-        <div class="cursos__titulo">
-            <h2 class="seccion__titulo">Cursos recientes</h2>
-            <a href="">Todos los cursos</a>
-        </div>
-        <p class="seccion__descripcion" style="width: 50%;">Nuestros cursos cubren una variedad de temas desde nivel principiante hasta nivel avanzado. Éstos son sólo algunos de nuestros cursos más populares:</p>
-        <section class="cursos__populares">
+        <h1 class="seccion__titulo titulo__cursos" style="font-size: 2.2rem;">Todos los <span class="gradient">cursos</span></h1>
+        <section class="todos__cursos">
             <div class="curso__tarjeta">
                 <figure>
                     <img src="https://assets.website-files.com/640849338ea47bd875234aa0/6426cd71101d42b50bc01495_course%20preview%203-min-p-500.jpg" alt="">
@@ -89,6 +84,31 @@
                         Create mobile apps using the popular React Native framework
                     </div>
                     <a href="course-preview.html">Ver mas</a>
+                </div>
+            </div>
+        </section>
+        <section class="recursos__recomendados">
+            <hr>
+            <h2 class="seccion__titulo">Enlaces útiles</h2>
+            <p class="seccion__descripcion">Aquí hay algunos enlaces útiles que le ayudarán a empezar:</p>
+            <div class="recursos">
+                <div class="recursos__tarjeta">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png" alt="">
+                    <h2>Web Design Basics</h2>
+                    <p>Aprende los conceptos básicos del diseño web con esta guía gratuita</p>
+                    <a href="">Ver guia</a>
+                </div>
+                <div class="recursos__tarjeta">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d397b45dffd_Code.png" alt="">
+                    <h2>CSS Tricks</h2>
+                    <p>Una colección de consejos y trucos para CSS</p>
+                    <a href="">Ver guia</a>
+                </div>
+                <div class="recursos__tarjeta">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d211745e001_Mortarboard.png" alt="">
+                    <h2>W3Schools</h2>
+                    <p>Un recurso completo para aprender sobre desarrollo web</p>
+                    <a href="">Ver guia</a>
                 </div>
             </div>
         </section>
@@ -157,30 +177,48 @@
                 </div>
             </div>
         </section>
-        <section class="recursos__recomendados">
-            <hr>
-            <h2 class="seccion__titulo">Enlaces útiles</h2>
-            <p class="seccion__descripcion">Aquí hay algunos enlaces útiles que le ayudarán a empezar:</p>
-            <div class="recursos">
-                <div class="recursos__tarjeta">
-                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png" alt="">
-                    <h2>Web Design Basics</h2>
-                    <p>Aprende los conceptos básicos del diseño web con esta guía gratuita</p>
-                    <a href="">Ver guia</a>
+        <hr style="margin-top: 100px;">
+        <section class="faq">
+            <h1><span class="gradient">Preguntas</span> frecuentes</h1>
+            <div class="preguntas">
+                <div id="ver_respuesta" class="pregunta__contenedor">
+                    <div class="pregunta">
+                        <p>Lorem ipsum dolor sit amet, consectetur?</p>
+                        <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+                    </div>
+                    <div class="respuesta">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                    </div>
                 </div>
-                <div class="recursos__tarjeta">
-                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d397b45dffd_Code.png" alt="">
-                    <h2>CSS Tricks</h2>
-                    <p>Una colección de consejos y trucos para CSS</p>
-                    <a href="">Ver guia</a>
+                <div id="ver_respuesta" class="pregunta__contenedor">
+                    <div class="pregunta">
+                        <p>Lorem ipsum dolor sit amet, consectetur?</p>
+                        <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+                    </div>
+                    <div class="respuesta">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                    </div>
                 </div>
-                <div class="recursos__tarjeta">
-                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d211745e001_Mortarboard.png" alt="">
-                    <h2>W3Schools</h2>
-                    <p>Un recurso completo para aprender sobre desarrollo web</p>
-                    <a href="">Ver guia</a>
+                <div id="ver_respuesta" class="pregunta__contenedor">
+                    <div class="pregunta">
+                        <p>Lorem ipsum dolor sit amet, consectetur?</p>
+                        <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+                    </div>
+                    <div class="respuesta">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                    </div>
+                </div>
+                <div id="ver_respuesta" class="pregunta__contenedor">
+                    <div class="pregunta">
+                        <p>Lorem ipsum dolor sit amet, consectetur?</p>
+                        <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+                    </div>
+                    <div class="respuesta">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                    </div>
                 </div>
             </div>
+            <p style="text-align: center;">¿Tiene alguna pregunta que no tiene respuesta? Puedes contactarnos en <a href="" style="color: #fff;">hello@sculptor.io</a></p>
         </section>
     </div>
     <section class="suscribirse">
@@ -226,6 +264,7 @@
             </div>
         </div>
     </footer>
+    <script src="assets/custom/js/all-courses.js"></script>
     <script src="assets/script.js"></script>
 </body>
 </html>

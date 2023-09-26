@@ -34,13 +34,21 @@ img {
 
 nav {
     background-color: #000;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #5c5c5c;
+    z-index: 20;
+    top: 0;
+}
+
+.nav__contenedor {
+    max-width: 1750px;
     display: flex;
     padding: 16px 50px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #5c5c5c;
+    margin:  auto;
 }
-
 
 nav a {
     color: #65747e;
@@ -56,8 +64,15 @@ nav a {
     font-weight: 600;
 }
 
+.btn__menu {
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+
 .hero {
     padding: .1px;
+    margin-top: 100px;
 }
 
 .hero__contenedor {
@@ -105,7 +120,7 @@ nav a {
     margin: auto;
 }
 
-.contenedor hr {
+hr {
     border: 1px solid #424242;
 }
 
@@ -174,7 +189,7 @@ nav a {
 }
 
 .resenas__intro .resenas__textos {
-    width: 40%;
+    width: 35%;
 }
 
 .resenas__intro .resenas__textos p {
@@ -359,6 +374,9 @@ footer {
     padding: 50px;
     justify-content: space-between;
     color: #fff;
+    max-width: 1750px;
+    margin: auto;
+
 }
 
 footer a {
@@ -379,6 +397,9 @@ footer a {
     gap: 10px;
 }
 
+.open__links {
+    height: 320px !important;
+}
 
 @media (max-width: 1000px) {
     .cursos__populares {
@@ -409,8 +430,37 @@ footer a {
 }
 
 @media (max-width: 780px) {
-    nav {
+    .contenedor {
+        padding: 0 20px;
+    }
+
+    nav a {
+        margin-right: 0;
+    }
+
+    .nav__links {
+        display: flex;
+        background-color: #000;
+        position: absolute;
         flex-direction: column;
+        width: 100%;
+        right: 0;
+        top: 68px;
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+        transition: .5s height;
+    }
+
+    .nav__links a {
+        border-bottom: 1px solid #65747e;
+        padding-bottom: 20px;
+        margin-top: 17px;
+    }
+
+
+    .btn__menu {
+        display: block;
     }
 
     .hero iframe {
@@ -445,10 +495,10 @@ footer a {
 }
 
 @media (max-width: 500px){
-    nav  {
-        display: none;
+    nav {
+        padding: 10px;
     }
-
+    
     .hero__contenedor h1 {
         font-size: 2rem;
         width: 90%;
@@ -460,6 +510,10 @@ footer a {
 
     .resenas__intro .resenas__textos {
         width: 100%;
+    }
+
+    .resenas__img_perfil, .resenas__estudiantes h2 {
+        text-align: center;
     }
 
     .suscribirse__form form button {
@@ -476,5 +530,11 @@ footer a {
     
     footer .footer__columna {
         width: 100%;
+    }
+}
+
+@media (max-width: 440px){
+    .hero iframe {
+        width: 320px;
     }
 }

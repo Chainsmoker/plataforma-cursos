@@ -1,0 +1,102 @@
+.hero__support {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://assets.website-files.com/640849338ea47bd875234aa0/6426cd71101d42b50bc01495_course%20preview%203-min-p-500.jpg);
+    background-position: 0px 0px, 50% 50%;
+    background-size: auto, cover;
+    height: 300px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero__support h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hero__support p {
+    margin-top: 20px;
+}
+
+.contacto__columna1 {
+    background-image: linear-gradient(135deg, #12c2e9, #c471ed 50%, #f64f59);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contacto__columna1 img {
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+.contacto__columna1 h1 {
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.contacto__columna1 p a {
+    color: #fff;
+}
+
+.contacto__redes {
+    display: flex;
+    gap: 10px;
+}
+
+.contacto__columna1_p2 h3 {
+    font-size: 1.3rem ;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contacto__redes img {
+    width: 30px;
+}
+
+.contacto__columna2 form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    float: right;
+}
+
+.contacto__columna2 form input {
+    margin-bottom: 20px;
+    height: 50px;
+    color: #fff;
+}
+
+.contacto__columna2 form input, .contacto__columna2 form textarea {
+    outline: none;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #65747e;
+}
+
+.contacto__columna2 form textarea {
+    color: #fff;
+    resize: none;
+}
+
+.contacto__columna2 form button {
+    margin-top: 70px;
+    background-color: #fff;
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@media (max-width: 915px) {
+    .contacto__columna2 form {
+        width: 100%;
+        margin-top: 50px;
+    }
+}
