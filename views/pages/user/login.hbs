@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/assets/custom/css/my-account.css">
+<link rel="stylesheet" href="/assets/custom/css/auth.css">
+
+<div class="grid__contenedor">
+    <div class="perfil__columna2">
+        <p style="margin: 50px 0 20px">Bienvenido de nuevo!</p>
+        <h1>Inicia sesión para acceder a cursos gratuitos</h1>
+        <form action="/my-account/login" method="POST">
+            <div class="form__group">
+                <input type="email" name="email" id="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="form__group">
+                <input type="password" name="password" id="contra">
+                <label for="contra">Contraseña</label>
+            </div>
+            {{#if messages.error}}
+            <p class="auth-error">{{ messages.error }}</p>
+            {{/if}}
+            {{#if messages.success_msg}}
+            <p class="auth-error" style="color: rgb(25, 156, 25);">{{ messages.success_msg }}</p>
+            {{/if}}
+            <button type="submit" class="btn-auth">Ingresar</button>
+        </form>
+        <div class="auth__textos">
+            <p>¿Olvidaste tu contraseña?</p>
+            <a href="">Restablecer la contraseña</a>
+        </div>
+        <div class="auth__textos">
+            <p>¿No tienes una cuenta?</p>
+            <a href="/my-account/register">Inscribirse</a>
+        </div>
+    </div>
+    <div class="login__portada">
+        <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6428049426a472e0efa32059_blog%20img%202-min-p-800.jpg"
+            alt="">
+    </div>
+</div>

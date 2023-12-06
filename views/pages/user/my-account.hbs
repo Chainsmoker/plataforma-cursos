@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="assets/custom/css/my-account.css">
+
+
+<div class="contenedor">
+    <div class="grid__contenedor">
+        <div class="perfil__columna1">
+            <h1>Mi cuenta</h1>
+            <p>¡Bienvenido a la página de tu cuenta! Puedes iniciar cursos online.</p>
+            <h1>Cursos en línea gratuitos</h1>
+            <div class="perfil__opc_cursos">
+                <p>Nombre del curso</p>
+                <p>Empezar el curso</p>
+            </div>
+            <hr style="margin-top: -20px;">
+            <div class="perfil__mis_cursos" style="padding-right: 10px;">
+                {{#each coursesViewed}}
+                <div class="curso__guardado">
+                    <div class="curso__guardado_info">
+                        <img src="{{ this.img }}"
+                            alt="">
+                        <div class="curso__guardado_detalles">
+                            <h2>{{ this.nombre }}</h2>
+                            <p>{{ this.nivel }}· <img style="width: 15px;" class="ic-du" src="/assets/icons/time.svg" /> {{ this.duracion }}hr</p>
+                        </div>
+                    </div>
+                    <a href="/courses/lessons/{{this.slug}}/{{ this.lessonId }}">Continuar</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="perfil__columna2">
+            <h1>Informacion del usuario</h1>
+            <form action="/my-account/edit-profile" method="POST">
+                <div class="form__group">
+                    <input type="email" name="email" id="email" placeholder="{{ userData.email }}">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form__group">
+                    <input type="text" name="name" id="email" placeholder="{{ userData.name }}">
+                    <label for="email">Nombre</label>
+                </div>
+                <!--
+                    <div class="form__email">
+                    <input type="checkbox" name="" id="">
+                    <p>Doy mi consentimiento para recibir correos electrónicos de marketing.</p>
+                </div>
+                    -->
+                <div id="error-message" class="form__group"></div>
+                <div class="form__botones">
+                    <button type="submit">Guardar</button>
+                </div>
+                <hr>
+                <div class="form__reset_pass">
+                    <h2>Contraseña</h2>
+                    <a href="">Cambiar contraseña</a>
+                </div>
+                <hr>
+                <div class="form__logout">
+                    <h2>Cerrar sesion</h2>
+                    <a href="/my-account/logout">Cerrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr style="margin-top: 50px;">
+<script>
+    // JavaScript para mostrar el mensaje de error si existe
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        const errorMessageElement = document.getElementById('error-message');
+
+        if (error) {
+            errorMessageElement.textContent = decodeURIComponent(error);
+            errorMessageElement.style.color = 'red'; // Opcional: darle estilo al mensaje de error
+        }
+    });
+</script>

@@ -1,0 +1,29 @@
+{
+    "nombre": "Curso Completo de IA Generativa: ChatGPT, Midjourney y más!",
+    "nivel": "Intermedio",
+    "duracion": 12,
+    "lema": "Descubre el fascinante mundo de la Inteligencia Artificial",
+    "descripcion": "Sumérgete en los conceptos avanzados de la Inteligencia Artificial con nuestro curso diseñado para aquellos que desean explorar las profundidades de esta emocionante disciplina. Aprende a desarrollar modelos de aprendizaje profundo y aplica técnicas de vanguardia.",
+    "created_at": "2023-12-06T12:00:00Z",
+    "slug": "curso-completo-ia-generativa-chatgpt-midjourney-y-mas",
+    "recursos": ["Libros especializados", "Conferencias en línea", "Proyectos prácticos"],
+    "temario": ["3", "4"],
+    "presentacion": "El Futuro de la Inteligencia Artificial",
+    "img": "ai-course.jpg",
+    "courseForYou": [
+      {
+        "icon": "icon-2.png",
+        "title": "Aplicaciones Prácticas",
+        "description": "Descubre cómo la IA está transformando diferentes industrias."
+      }
+    ],
+    "utilities": [
+      {
+        "icon": "util-icon-2.png",
+        "title": "Herramientas Avanzadas",
+        "description": "Explora herramientas avanzadas utilizadas en proyectos de IA.",
+        "link": "https://example.com/ai-tools"
+      }
+    ]
+  }
+  

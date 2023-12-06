@@ -1,0 +1,81 @@
+<!-- main.hbs -->
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    {{#extra-css}}
+    {{/extra-css}}
+    <title>{{ pageTitle }}</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__contenedor">
+            <figure class="logo">
+                <a href="/"><img src="/assets/img/logo.png" alt=""></a>
+            </figure>
+            <div class="nav__links">
+                <a class="{{#eq active 'courses'}}active{{/eq}}" href="/courses">Cursos</a>
+                <a class="{{#eq active 'support'}}active{{/eq}}" href="/support">Soporte</a>
+                <a class="{{#eq active 'about'}}active{{/eq}}" href="/about">About</a>
+                <a class="{{ active }}" href="">FAQ</a>
+                {{#if user}}
+                <a class="btn-gradient" href="/my-account">Mi cuenta</a>
+                {{else}}
+                <a class="{{#eq active 'login'}}active{{/eq}}" href="/my-account/login">Iniciar sesión</a>
+                <a class="{{#eq active 'register'}}active{{/eq}}" href="/my-account/register">Registrarse</a>
+                {{/if}}
+            </div>
+            <div id="btn_menu" class="btn__menu">
+                <img src="/assets/icons/menu.svg" alt="">
+            </div>
+        </div>
+    </nav>
+    {{{body}}}
+
+    <footer>
+        <div class="footer__columna">
+            <img src="/assets/img/icon-logo.png" alt="">
+            <p>© All rights reserved.</p>
+        </div>
+        <div class="footer__columna">
+            <h2>Descubrir</h2>
+            <a href="/">Inicio</a>
+            <a href="/courses">Cursos</a>
+            <a href="/about">Sobre</a>
+            <a href="/support">Soporte</a>
+        </div>
+        <div class="footer__columna">
+            <h2>Cursos</h2>
+            <a href="">Todos los cursos</a>
+            <a href="">Desarrollo frontend</a>
+            <a href="">Desarrollo backend</a>
+            <a href="">Desarrollo movil</a>
+        </div>
+        <div class="footer__columna">
+            <h2>Social</h2>
+            <div class="redes__sociales">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5c206178024f34d017_Discord.svg"
+                    alt="">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5c440efd609b83f245_Twitter.svg"
+                    alt="">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5cffa2b941e8a4dd25_Instagram.svg"
+                    alt="">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5ca249aa5f7649602a_Facebook.svg"
+                    alt="">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5d242b09573aa4d6cd_TikTok.svg"
+                    alt="">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6425ac5c12f1b4e5ea15a017_YouTube.svg"
+                    alt="">
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/script.js"></script>
+    <script src="/assets/custom/js/all-courses.js"></script>
+</body>
+
+</html>

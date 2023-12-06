@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="/assets/custom/css/course-preview.css">
+<link rel="stylesheet" href="/assets/custom/css/all-courses.css">
+
+<div class="contenedor">
+    <div class="grid__contenedor">
+        <div class="hero__columna1">
+            <div class="indice">
+                <a href="/courses">Todos los cursos</a>
+                <p>/</p>
+                <p>{{course.nombre}}</p>
+            </div>
+            <div class="curso__detalles">
+                <h1>{{ course.nombre }}</h1>
+                <p>{{ course.nivel }} · <img class="ic-du" src="/assets/icons/time.svg"/> {{ course.duracion }} horas</p>
+                <p class="curso__descripcion">{{ course.lema }}</p>
+            </div>
+            <div class="curso__botones">
+                <a class="btn_empezar" href="/courses/lessons/{{ course.slug }}">Empezar curso</a>
+                <button>Ver trailer</button>
+            </div>
+        </div>
+        <div class="hero__columna2">
+            <img src="{{ course.img }}"
+                alt="">
+        </div>
+    </div>
+    <section class="sobre__curso">
+        <h1>Acerca del curso</h1>
+        <div class="sobre__tarjetas">
+            <div class="sobre__tarjeta">
+                <img src="/assets/icons/time.svg" alt="">
+                <h2>Duración del curso</h2>
+                <p>{{ course.duracion }}hr</p>
+            </div>
+            <div class="sobre__tarjeta">
+                <img src="/assets/icons/calendar.svg" alt="">
+                <h2>Actualizado</h2>
+                <p>{{ fechaFormateada }}</p>
+            </div>
+            <div class="sobre__tarjeta">
+                <img src="/assets/icons/star.svg" alt="">
+                <h2>Resultado</h2>
+                <p>{{ course.resultado }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="sobre__textos">
+            <p>¡Obtenga acceso <strong>GRATUITO</strong> de por vida al instante después de registrarse!</p>
+            <a class="btn_empezar" href="/courses/lessons/{{ course.slug }}">Empezar curso</a>
+        </div>
+    </section>
+    <div class="grid__contenedor">
+        <div class="resumen__columna1">
+            <h1>Resumen</h1>
+            <div class="curso__detalles" style="width: 90%;">
+                <img src="{{ course.img }}"
+                    alt="">
+                <p class="curso__descripcion">{{ course.descripcion }}</p>
+            </div>
+            <div class="curso__botones">
+                <a class="btn_empezar" href="/courses/lessons/{{ course.slug }}">Empezar curso</a>
+                <button>Recursos del curso</button>
+            </div>
+        </div>
+        <div class="resumen__columna2">
+            <h1>Temario</h1>
+            <div class="temario__contenedor">
+                {{#each tema }}
+                <a href="/courses/lessons/{{ @root.course.slug }}/" class="termario__seccion">
+                    <img src="/assets/icons/play.svg" alt="">
+                    <p>{{ this.name }}</p>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <hr style="margin-top: 50px;">
+    <section class="para__ti">
+        <h1>¿Es este curso para ti?</h1>
+        <div class="grid__para_ti">
+            {{#each course.courseForYou}}
+            <div class="tarjeta__para_ti">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png"
+                    alt="">
+                <div class="tarjeta__para_ti_textos">
+                    <h3>{{ this.title }}</h3>
+                    <p>{{ this.description }}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <hr>
+    </section>
+    <section class="recursos__recomendados">
+        <h2 class="seccion__titulo">Enlaces útiles</h2>
+        <p class="seccion__descripcion">Aquí hay algunos enlaces útiles que le ayudarán a empezar:</p>
+        <div class="recursos">
+            {{#each course.utilities}}
+            <div class="recursos__tarjeta">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png"
+                    alt="">
+                <h2>{{ this.title }}</h2>
+                <p>{{ this.description }}</p>
+                <a href="{{ this.link }}" target="_blank">Ver guia</a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <h1 class="seccion__titulo titulo__cursos" style="font-size: 2.2rem; margin-top: 120px;">Cursos similares</span>
+    </h1>
+    <section class="todos__cursos">
+        {{#each courses}}
+        <div class="curso__tarjeta">
+            <figure>
+                <img src="{{ img }}"
+                    alt="">
+            </figure>
+            <div class="tarjeta__contenido">
+                <div class="tarjeta__titulo">
+                    <h2>{{ nombre }}</h2>
+                </div>
+                <div class="tarjeta__nivel_tiempo">
+                    {{ nivel }} · <img class="ic-du" src="/assets/icons/time.svg"/> {{ duracion }}hr
+                </div>
+                <div class="tarjeta__descripcion">
+                    {{ descripcion }}
+                </div>
+            </div>
+            <a href="/courses/detail/{{ slug }}">Ver mas</a>
+        </div>
+        {{/each}}
+    </section>
+</div>
+<hr style="margin-top: 50px;">
+</body>
+
+</html>

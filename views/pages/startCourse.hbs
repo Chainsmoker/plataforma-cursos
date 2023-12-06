@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="/assets/custom/course">
+<link rel="stylesheet" href="/assets/custom/css/course-preview.css">
+<link rel="stylesheet" href="/assets/custom/css/course-view.css">
+<link rel="stylesheet" href="/assets/custom/css/all-courses.css">
+
+<div class="contenedor">
+    <div class="indice" style="margin-top: 100px;">
+        <a href="/courses">Todos los cursos</a>
+        <p>/</p>
+        <a href="/courses/detail/{{ course.slug }}">{{ course.nombre }}</a>
+        <p>/</p>
+        <p>Lecciones</p>
+    </div>
+    <div class="grid__contenedor">
+        <div class="grid__columna1">
+            {{#if lesson }}
+            <div id="player-container">
+            </div>
+            {{else}}
+            <iframe width="747" height="420" src="{{ course.presentacion }}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            {{/if}}
+            <h1>Acerca de esta lección</h1>
+            {{#if lesson.content }}
+            <p>{{ lesson.content }}</p>
+            {{else}}
+            <p>{{ course.descripcion }}</p>
+            {{/if}}
+        </div>
+        <div class="temario__columna2">
+            <div class="temario__textos">
+                <p>ESTAS MIRANDO:</p>
+                {{#if lesson }}
+                <h2>{{ lesson.name }}</h2>
+                {{else}}
+                <h2>Presentacion</h2>
+                {{/if }}
+                <p>SIGUE:</p>
+            </div>
+            <div class="temario__contenedor">
+                {{#each temas}}
+                <p class="temario__tema_titulo">{{ this.name }}</p>
+                {{#each lessons}}
+                {{#compareStrings this.name @root.lesson.name}}
+                <a href="/courses/lessons/{{@root.course.slug}}/{{ this.lessonId }}"
+                    class="termario__seccion termario__seccion--active">
+                    <img src="/assets/icons/play.svg" alt="">
+                    <p>{{ this.name }}</p>
+                </a>
+                {{else}}
+                <a href="/courses/lessons/{{@root.course.slug}}/{{ this.lessonId }}" class="termario__seccion">
+                    <img src="/assets/icons/play.svg" alt="">
+                    <p>{{ this.name }}</p>
+                </a>
+                {{/compareStrings}}
+                {{/each}}
+                {{/each}}
+
+            </div>
+            <div class="temario__recursos">
+                <hr>
+                <a href="">Obtener recursos</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="seccion__titulo titulo__cursos" style="font-size: 2.2rem; margin-top: 120px;">Cursos similares</span>
+    </h1>
+    <section class="todos__cursos">
+        {{#each courses }}
+        <div class="curso__tarjeta">
+            <figure>
+                <img src="{{ img }}"
+                    alt="">
+            </figure>
+            <div class="tarjeta__contenido">
+                <div class="tarjeta__titulo">
+                    <h2>{{ nombre }}</h2>
+                </div>
+                <div class="tarjeta__nivel_tiempo">
+                    {{ nivel }} · <img class="ic-du" src="/assets/icons/time.svg" /> {{ duracion }}hr
+                </div>
+                <div class="tarjeta__descripcion">
+                    {{ descripcion }}
+                </div>
+            </div>
+            <a href="/courses/detail/{{ slug }}">Ver mas</a>
+        </div>
+        {{/each}}
+    </section>
+</div>
+<hr style="margin-top: 50px;">
+<div class="chat__icon" id="btn-chat">
+</div>
+<div class="chat__contenedor">
+    <div class="chat__header">
+        <p>Escribe un mensaje...</p>
+        <div class="chat__header_close">
+            <img src="/assets/icons/x.svg" id="close-chat" alt="">
+        </div>
+    </div>
+    <div class="chat__info">
+        <img src="/assets/img/chatgpt-logo.png" alt="">
+        <h3>ChatGTP</h3>
+        <p>Ask us anything – we’ll get back to you here or by email.</p>
+    </div>
+    <div class="chat__messages">
+        <div class="bot__message message">
+            <p>Respuesta del bot Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione ducimus qui dicta labore molestias, omnis aut corporis eius perferendis minus deserunt a! Rerum eligendi quis, voluptates sapiente id excepturi.</p>
+        </div>
+        <div class="user__message message">
+            <p>Pregunta del usuario</p>
+        </div>
+    </div>
+    <form class="form__message" action="" method="POST">
+        <input type="text" placeholder="Escribe un mensaje...">
+        <img src="/assets/icons/send.svg" alt="">
+    </form>
+</div>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+    document.querySelector("#btn-chat").addEventListener("click", ()=>{
+        document.querySelector(".chat__contenedor").classList.add("open-chat")
+    })
+    document.querySelector("#close-chat").addEventListener("click", ()=>{
+        document.querySelector(".chat__contenedor").classList.remove("open-chat")
+    })
+    // Variables globales para el reproductor de YouTube
+    let player;
+
+    // Función para inicializar el reproductor de YouTube
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player-container', {
+            videoId: '{{ lesson.videoUrl }}', // Reemplaza con el ID del video de YouTube actual
+            playerVars: {
+                'showRelatedVideos': false // Deshabilita las recomendaciones al final del video
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // Esta función se llama cuando el reproductor de YouTube está listo
+    function onPlayerReady(event) {
+        // Reproduce el video automáticamente cuando el reproductor esté listo
+        event.target.playVideo();
+    }
+
+    // Esta función se llama cuando el estado del reproductor cambia (por ejemplo, reproducción, pausa, finalización)
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            window.location.href = "/courses/lessons/{{course.slug}}/{{ nextLessonId }}"
+        }
+    }
+</script>

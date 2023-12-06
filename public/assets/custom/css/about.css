@@ -1,0 +1,78 @@
+.hero__fondo {
+    height: 300px;
+    background-image: url(https://assets.website-files.com/640849338ea47b23b7234a7e/6426cd9807ee8388cd2f05b5_course%20preview%202-min.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sobre__nosotros_titulo {
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+.sobre__nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.sobre__nosotros p {
+    margin-top: 20px;
+}
+
+.nuestro__equipo {
+    margin-top: 100px;
+}
+
+.nuestro__equipo h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.nuestro__equipo_contenedor {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.tarjeta__personal h1 {
+    margin-top: 20px;
+}
+
+.tarjeta__personal p {
+    margin-top: -27px;
+    font-size: 13px;
+}
+
+@media (max-width: 1150px) {
+    .tarjeta__personal {
+        width: 100%;
+    }
+
+    .tarjeta__personal p {
+        font-size: 16px;
+    }
+    
+}
+
+@media (max-width: 850px) {
+    .nuestro__equipo_contenedor {
+        flex-wrap: wrap;
+    }
+    
+    .sobre__nosotros {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre__nosotros_titulo {
+        text-align: center;
+    }
+
+    .faq h1 {
+        text-align: center;
+    }
+}

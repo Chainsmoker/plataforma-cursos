@@ -1,0 +1,162 @@
+<section class="hero">
+    <div class="hero__contenedor">
+        <h1><span class="gradient">Aprenda las habilidades</span> que necesita para crear sitios web y aplicaciones
+            impresionantes</h1>
+        <a href="">Aprender ahora</a>
+        <p>Nuestros cursos son completamente gratuitos y podrás acceder a ellos registrandote</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N5dkg28jRF0?si=gqdtsYpHr0GGooa_"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+</section>
+<div class="contenedor">
+    <hr>
+    <div class="cursos__titulo">
+        <h2 class="seccion__titulo">Cursos recientes</h2>
+        <a href="">Todos los cursos</a>
+    </div>
+    <p class="seccion__descripcion" style="width: 50%;">Nuestros cursos cubren una variedad de temas desde nivel
+        principiante hasta nivel avanzado. Éstos son sólo algunos de nuestros cursos más populares:</p>
+    <section class="cursos__populares">
+        {{#each courses}}
+        <div class="curso__tarjeta">
+            <figure>
+                <img src="{{ img }}"
+                    alt="">
+            </figure>
+            <div class="tarjeta__contenido">
+                <div class="tarjeta__titulo">
+                    <h2>{{ nombre }}</h2>
+                </div>
+                <div class="tarjeta__nivel_tiempo">
+                    {{ nivel }} · <img class="ic-du" src="/assets/icons/time.svg"/> {{ duracion }}hr
+                </div>
+                <div class="tarjeta__descripcion">
+                    {{ descripcion }}
+                </div>
+            </div>
+            <a href="/courses/detail/{{ slug }}">Ver mas</a>
+        </div>
+        {{/each}}
+    </section>
+    <section class="resenas">
+        <hr>
+        <div class="resenas__intro">
+            <div class="resenas__textos">
+                <h2 class="seccion__titulo">No confíes sólo en nuestra palabra</h2>
+                <p class="seccion__descripcion">Vea lo que nuestros estudiantes tienen que decir sobre nuestros cursos:
+                </p>
+            </div>
+            <div class="resenas__estudiantes">
+                <div class="resenas__img_perfil">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12da95e45e017_unsplash_IHIgnhLvz5Q-min-p-500.jpeg"
+                        alt="">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                        alt="">
+                    <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d034945e014_unsplash_dt60oksDTx8-min-p-500.jpeg"
+                        alt="">
+                </div>
+                <h2>Con la <span class="gradient">confianza de +5.000</span> estudiantes</h2>
+            </div>
+        </div>
+        <div class="resenas__slider">
+            <div class="resenas__contenido">
+                <div class="resenas__tarjetas">
+                    <div class="resenas__tarjeta">
+                        <div class="resena__tarjeta_text">
+                            "The course on React Native was the perfect introduction to mobile development. The lessons
+                            were well-structured and the instructors were engaging."
+                        </div>
+                        <hr>
+                        <div class="resena__tarjeta_info">
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                                alt="">
+                            <div class="resena__tarjeta_usuario">
+                                <h4>James</h4>
+                                <p>Feb 2023</p>
+                            </div>
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="resenas__tarjeta">
+                        <div class="resena__tarjeta_text">
+                            "The course on React Native was the perfect introduction to mobile development. The lessons
+                            were well-structured and the instructors were engaging."
+                        </div>
+                        <hr>
+                        <div class="resena__tarjeta_info">
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                                alt="">
+                            <div class="resena__tarjeta_usuario">
+                                <h4>James</h4>
+                                <p>Feb 2023</p>
+                            </div>
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="resenas__tarjeta">
+                        <div class="resena__tarjeta_text">
+                            "The course on React Native was the perfect introduction to mobile development. The lessons
+                            were well-structured and the instructors were engaging."
+                        </div>
+                        <hr>
+                        <div class="resena__tarjeta_info">
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                                alt="">
+                            <div class="resena__tarjeta_usuario">
+                                <h4>James</h4>
+                                <p>Feb 2023</p>
+                            </div>
+                            <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="recursos__recomendados">
+        <hr>
+        <h2 class="seccion__titulo">Enlaces útiles</h2>
+        <p class="seccion__descripcion">Aquí hay algunos enlaces útiles que le ayudarán a empezar:</p>
+        <div class="recursos">
+            <div class="recursos__tarjeta">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png"
+                    alt="">
+                <h2>Web Design Basics</h2>
+                <p>Aprende los conceptos básicos del diseño web con esta guía gratuita</p>
+                <a href="">Ver guia</a>
+            </div>
+            <div class="recursos__tarjeta">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d397b45dffd_Code.png"
+                    alt="">
+                <h2>CSS Tricks</h2>
+                <p>Una colección de consejos y trucos para CSS</p>
+                <a href="">Ver guia</a>
+            </div>
+            <div class="recursos__tarjeta">
+                <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d211745e001_Mortarboard.png"
+                    alt="">
+                <h2>W3Schools</h2>
+                <p>Un recurso completo para aprender sobre desarrollo web</p>
+                <a href="">Ver guia</a>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="suscribirse">
+    <div class="suscribirse__textos">
+        <h2>Mantente al tanto</h2>
+        <p>Siempre estamos agregando nuevos cursos a nuestro sitio web. Suscríbase a nuestro boletín para ser el primero
+            en enterarse de nuestras últimas ofertas.</p>
+    </div>
+    <div class="suscribirse__form">
+        <form action="">
+            <input type="text">
+            <button>Suscribirse</button>
+        </form>
+    </div>
+</section>

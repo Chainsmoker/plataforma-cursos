@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/assets/custom/css/my-account.css">
+<link rel="stylesheet" href="/assets/custom/css/auth.css">
+
+<div class="grid__contenedor">
+    <div class="perfil__columna2">
+        <p style="margin: 50px 0 20px">Bienvenido!</p>
+        <h1>Crea una cuenta para empezar a aprender</h1>
+        <form action="/my-account/register" method="POST">
+            <div class="form__group">
+                <input type="text" name="name" id="name">
+                <label for="name">Nombre completo</label>
+            </div>
+            <div class="form__group">
+                <input type="email" name="email" id="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="form__group">
+                <input type="password" name="password" id="contra">
+                <label for="contra">Contraseña</label>
+            </div>
+            {{#if errors}}
+            <p class="auth-error">{{ errors }}</p>
+            {{/if}}
+            <button type="submit" class="btn-auth">Registrarse</button>
+        </form>
+        <div class="auth__textos">
+            <p>¿Ya tienes una cuenta?</p>
+            <a href="/my-account/login">Ingresar</a>
+        </div>
+    </div>
+    <div class="login__portada">
+        <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/64280494f9d51a5c7a7f8313_blog%20img%203-min-p-800.jpg"
+            alt="">
+    </div>
+</div>

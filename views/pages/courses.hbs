@@ -1,0 +1,215 @@
+
+<link rel="stylesheet" href="assets/custom/css/all-courses.css">
+
+<section class="hero">
+  <div class="hero__contenedor">
+    <h1 style="font-size: 3rem;"><span class="gradient">Cursos</span> destacados</h1>
+    <p>Nuestros cursos cubren una variedad de temas desde nivel principiante hasta nivel avanzado. Aquí están nuestros
+      cursos más populares:</p>
+  </div>
+</section>
+<div class="contenedor">
+  <hr>
+  <h1 class="seccion__titulo titulo__cursos" style="font-size: 2.2rem;">Todos los <span class="gradient">cursos</span>
+  </h1>
+  <section class="todos__cursos">
+    {{#each courses}}
+    <div class="curso__tarjeta">
+      <figure>
+        <img
+          src="{{ img }}"
+          alt="">
+      </figure>
+      <div class="tarjeta__contenido">
+        <div class="tarjeta__titulo">
+          <h2>{{ nombre }}</h2>
+        </div>
+        <div class="tarjeta__nivel_tiempo">
+          {{ nivel }} · <img class="ic-du" src="/assets/icons/time.svg"/> {{ duracion }}hr
+        </div>
+        <div class="tarjeta__descripcion">
+          {{ descripcion }}
+        </div>
+      </div>
+      <a href="/courses/detail/{{ slug }}">Ver mas</a>
+    </div>
+    {{/each}}
+
+  </section>
+  <section class="recursos__recomendados">
+    <hr>
+    <h2 class="seccion__titulo">Enlaces útiles</h2>
+    <p class="seccion__descripcion">Aquí hay algunos enlaces útiles que le ayudarán a empezar:</p>
+    <div class="recursos">
+      <div class="recursos__tarjeta">
+        <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d7d8145dffb_Pen.png" alt="">
+        <h2>Web Design Basics</h2>
+        <p>Aprende los conceptos básicos del diseño web con esta guía gratuita</p>
+        <a href="">Ver guia</a>
+      </div>
+      <div class="recursos__tarjeta">
+        <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d397b45dffd_Code.png" alt="">
+        <h2>CSS Tricks</h2>
+        <p>Una colección de consejos y trucos para CSS</p>
+        <a href="">Ver guia</a>
+      </div>
+      <div class="recursos__tarjeta">
+        <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d211745e001_Mortarboard.png"
+          alt="">
+        <h2>W3Schools</h2>
+        <p>Un recurso completo para aprender sobre desarrollo web</p>
+        <a href="">Ver guia</a>
+      </div>
+    </div>
+  </section>
+  <section class="resenas">
+    <hr>
+    <div class="resenas__intro">
+      <div class="resenas__textos">
+        <h2 class="seccion__titulo">No confíes sólo en nuestra palabra</h2>
+        <p class="seccion__descripcion">Vea lo que nuestros estudiantes tienen que decir sobre nuestros cursos:</p>
+      </div>
+      <div class="resenas__estudiantes">
+        <div class="resenas__img_perfil">
+          <img
+            src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12da95e45e017_unsplash_IHIgnhLvz5Q-min-p-500.jpeg"
+            alt="">
+          <img
+            src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+            alt="">
+          <img
+            src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d034945e014_unsplash_dt60oksDTx8-min-p-500.jpeg"
+            alt="">
+        </div>
+        <h2>Con la <span class="gradient">confianza de +5.000</span> estudiantes</h2>
+      </div>
+    </div>
+    <div class="resenas__slider">
+      <div class="resenas__contenido">
+        <div class="resenas__tarjetas">
+          <div class="resenas__tarjeta">
+            <div class="resena__tarjeta_text">
+              "The course on React Native was the perfect introduction to mobile development. The lessons were
+              well-structured and the instructors were engaging."
+            </div>
+            <hr>
+            <div class="resena__tarjeta_info">
+              <img
+                src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                alt="">
+              <div class="resena__tarjeta_usuario">
+                <h4>James</h4>
+                <p>Feb 2023</p>
+              </div>
+              <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                alt="">
+            </div>
+          </div>
+          <div class="resenas__tarjeta">
+            <div class="resena__tarjeta_text">
+              "The course on React Native was the perfect introduction to mobile development. The lessons were
+              well-structured and the instructors were engaging."
+            </div>
+            <hr>
+            <div class="resena__tarjeta_info">
+              <img
+                src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                alt="">
+              <div class="resena__tarjeta_usuario">
+                <h4>James</h4>
+                <p>Feb 2023</p>
+              </div>
+              <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                alt="">
+            </div>
+          </div>
+          <div class="resenas__tarjeta">
+            <div class="resena__tarjeta_text">
+              "The course on React Native was the perfect introduction to mobile development. The lessons were
+              well-structured and the instructors were engaging."
+            </div>
+            <hr>
+            <div class="resena__tarjeta_info">
+              <img
+                src="https://assets.website-files.com/640849338ea47b23b7234a7e/6426b2f9dbf12d30e345e011_unsplash_XHVpWcr5grQ-min-p-500.jpeg"
+                alt="">
+              <div class="resena__tarjeta_usuario">
+                <h4>James</h4>
+                <p>Feb 2023</p>
+              </div>
+              <img src="https://assets.website-files.com/640849338ea47b23b7234a7e/640849338ea47bf404234ad3_google.svg"
+                alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr style="margin-top: 100px;">
+  <section class="faq">
+    <h1><span class="gradient">Preguntas</span> frecuentes</h1>
+    <div class="preguntas">
+      <div id="ver_respuesta" class="pregunta__contenedor">
+        <div class="pregunta">
+          <p>Lorem ipsum dolor sit amet, consectetur?</p>
+          <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="respuesta">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+          Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean
+          faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </div>
+      </div>
+      <div id="ver_respuesta" class="pregunta__contenedor">
+        <div class="pregunta">
+          <p>Lorem ipsum dolor sit amet, consectetur?</p>
+          <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="respuesta">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+          Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean
+          faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </div>
+      </div>
+      <div id="ver_respuesta" class="pregunta__contenedor">
+        <div class="pregunta">
+          <p>Lorem ipsum dolor sit amet, consectetur?</p>
+          <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="respuesta">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+          Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean
+          faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </div>
+      </div>
+      <div id="ver_respuesta" class="pregunta__contenedor">
+        <div class="pregunta">
+          <p>Lorem ipsum dolor sit amet, consectetur?</p>
+          <img id="pregunta_flecha" src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="respuesta">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+          Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean
+          faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center;">¿Tiene alguna pregunta que no tiene respuesta? Puedes contactarnos en <a href=""
+        style="color: #fff;">hello@bytemasters.com</a></p>
+  </section>
+</div>
+<section class="suscribirse">
+  <div class="suscribirse__textos">
+    <h2>Mantente al tanto</h2>
+    <p>Siempre estamos agregando nuevos cursos a nuestro sitio web. Suscríbase a nuestro boletín para ser el primero en
+      enterarse de nuestras últimas ofertas.</p>
+  </div>
+  <div class="suscribirse__form">
+    <form action="">
+      <input type="text">
+      <button>Suscribirse</button>
+    </form>
+  </div>
+</section>
+<script src="assets/custom/js/all-courses.js"></script>
+<script src="assets/script.js"></script>
