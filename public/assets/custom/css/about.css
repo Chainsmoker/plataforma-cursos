@@ -34,6 +34,7 @@
 
 .nuestro__equipo_contenedor {
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
     text-align: center;
@@ -41,6 +42,11 @@
 
 .tarjeta__personal h1 {
     margin-top: 20px;
+}
+
+.tarjeta__personal img{
+    width: 400px;
+    height: 400px;
 }
 
 .tarjeta__personal p {

@@ -36,6 +36,18 @@ const bcrypt = require('bcrypt');
  *               password: [hashed password]
  */
 
+//Crear un nuevo user
+router.post('/user', async (req, res)=>{
+    const user = user_model(req.body);
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(user.password, salt);
+    user.password = hash;
+    user
+        .save()
+        .then((data)=> res.json(data))
+        .catch((error)=> res.json({message:error}));
+});
+
 /**
  * @swagger
  * /api/check_user:
@@ -64,6 +76,31 @@ const bcrypt = require('bcrypt');
  *               name: Usuario Verificado
  *               email: verificado@usuario.com
  */
+
+
+//Recuperar un user por correo
+router.post('/check_user', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const emailLowerCase = email.toLowerCase();
+
+        const user = await user_model.findOne({ email: emailLowerCase });
+
+        if (user) {
+            const isMatch = await bcrypt.compare(password, user.password);
+
+            if (isMatch) {
+                res.json(user);
+            } else {
+                res.json(null);
+            }
+        } else {
+            res.json(null);
+        }
+    } catch (error) {
+        res.json({ message: 'Cuenta inválida' });
+    }
+});
 
 /**
  * @swagger
@@ -105,42 +142,6 @@ const bcrypt = require('bcrypt');
  *               name: Usuario Actualizado
  *               email: actualizado@usuario.com
  */
-
-//Crear un nuevo user
-router.post('/user', async (req, res)=>{
-    const user = user_model(req.body);
-    const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(user.password, salt);
-    user.password = hash;
-    user
-        .save()
-        .then((data)=> res.json(data))
-        .catch((error)=> res.json({message:error}));
-});
-
-//Recuperar un user por correo
-router.post('/check_user', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const emailLowerCase = email.toLowerCase();
-
-        const user = await user_model.findOne({ email: emailLowerCase });
-
-        if (user) {
-            const isMatch = await bcrypt.compare(password, user.password);
-
-            if (isMatch) {
-                res.json(user);
-            } else {
-                res.json(null);
-            }
-        } else {
-            res.json(null);
-        }
-    } catch (error) {
-        res.json({ message: 'Cuenta inválida' });
-    }
-});
 
 //Actualizar un user
 router.put('/update_user/', async (req, res) => {

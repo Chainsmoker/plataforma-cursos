@@ -21,6 +21,13 @@ const router = express.Router();
  *                 lessons: 8
  */
 
+//Obtener temas
+router.get('/temas',(req, res)=>{
+    tema_model
+        .find()
+        .then((data)=> res.json(data))
+        .catch((error)=> res.json({message:error}));
+});
 
 /**
  * @swagger
@@ -55,6 +62,15 @@ const router = express.Router();
  *               lessons: 12
  */
 
+//Crear un nuevo tema
+router.post('/tema',(req, res)=>{
+    const tema = tema_model(req.body);
+    tema
+        .save()
+        .then((data)=> res.json(data))
+        .catch((error)=> res.json({message:error}));
+});
+
 /**
  * @swagger
  * /api/tema/{id}:
@@ -77,6 +93,16 @@ const router = express.Router();
  *               description: Descripción del tema recuperado.
  *               lessons: 15
  */
+
+
+//Recuperar un tema por ID
+router.get('/tema/:id',(req, res)=>{
+    const { id } = req.params;
+    tema_model
+        .findById(id)
+        .then((data)=> res.json(data))
+        .catch((error)=> res.json({message:error}));
+});
 
 /**
  * @swagger
@@ -118,6 +144,18 @@ const router = express.Router();
  *               lessons: 18
  */
 
+
+//Actualizar un tema
+router.put('/tema/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, description, lessons } = req.body;
+
+    tema_model
+        .updateOne({ _id: id }, { name, description, lessons })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 /**
  * @swagger
  * /api/tema/{id}:
@@ -138,43 +176,6 @@ const router = express.Router();
  *             example:
  *               message: Tema eliminado con éxito.
  */
-
-//Obtener temas
-router.get('/temas',(req, res)=>{
-    tema_model
-        .find()
-        .then((data)=> res.json(data))
-        .catch((error)=> res.json({message:error}));
-});
-
-//Crear un nuevo tema
-router.post('/tema',(req, res)=>{
-    const tema = tema_model(req.body);
-    tema
-        .save()
-        .then((data)=> res.json(data))
-        .catch((error)=> res.json({message:error}));
-});
-
-//Recuperar un tema por ID
-router.get('/tema/:id',(req, res)=>{
-    const { id } = req.params;
-    tema_model
-        .findById(id)
-        .then((data)=> res.json(data))
-        .catch((error)=> res.json({message:error}));
-});
-
-//Actualizar un tema
-router.put('/tema/:id', (req, res) => {
-    const { id } = req.params;
-    const { name, description, lessons } = req.body;
-
-    tema_model
-        .updateOne({ _id: id }, { name, description, lessons })
-        .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
-});
 
 //Eliminar un tema
 router.delete('/tema/:id',(req, res)=>{
